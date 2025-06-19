@@ -4,8 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Revolnet - Coming Soon</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <link rel="icon" href="registered.png" type="image/x-icon" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+   <link rel="icon" href="registered.png" type="image/x-icon" />
   <style>
     * { box-sizing: border-box; }
     body {
@@ -27,17 +28,38 @@
       top: 0;
       z-index: 1000;
     }
-    .navbar .logo { font-size: 1.5rem; font-weight: bold; }
-    .navbar .nav-links a {
+    .logo { font-size: 1.5rem; font-weight: bold; }
+
+    .nav-links a {
       color: #fff;
       margin: 0 15px;
       font-weight: bold;
     }
-    .navbar .nav-links a:hover { color: #00bcd4; }
+    .nav-links a:hover { color: #00bcd4; }
+
+    .hamburger {
+      display: none;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      background-color: #333;
+      padding: 10px 20px;
+    }
+    .mobile-nav a {
+      color: white;
+      padding: 10px 0;
+      border-bottom: 1px solid #444;
+      text-align: left;
+    }
 
     .section { padding: 50px 20px; text-align: center; }
+
     .coming-soon {
-      background-color: rgb(8, 223, 243);
+      background-color: blue;
       color: white;
       padding: 100px 20px;
     }
@@ -62,18 +84,10 @@
       width: 100%;
       border-radius: 10px;
     }
-    .about-right h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
 
     .video-section {
       background: #fff;
       padding: 50px 20px;
-    }
-    .video-section h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
     }
     .video-container {
       max-width: 800px;
@@ -88,10 +102,6 @@
 
     .team {
       background: #eaeaea;
-    }
-    .team h2 {
-      font-size: 2rem;
-      margin-bottom: 30px;
     }
     .team-container {
       display: flex;
@@ -125,10 +135,6 @@
       background: #f1f1f1;
       padding: 50px 20px;
     }
-    .contact-us h1 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
     .contact-info {
       max-width: 600px;
       margin: 0 auto;
@@ -152,6 +158,13 @@
     }
 
     @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .hamburger {
+        display: block;
+        color: white;
+      }
       .about-us {
         flex-direction: column;
       }
@@ -176,7 +189,7 @@
 <body>
 
   <nav class="navbar">
-    <div class="logo">REVOLNET</div>
+    <div class="logo">My Portfolio</div>
     <div class="nav-links">
       <a href="#coming-soon">Coming Soon</a>
       <a href="#about-us">About Us</a>
@@ -185,7 +198,17 @@
       <a href="#contact-us">Contact</a>
       <a href="#map">Map</a>
     </div>
+    <div class="hamburger" onclick="toggleMobileMenu()">☰</div>
   </nav>
+
+  <div id="mobileMenu" class="mobile-nav">
+    <a href="#coming-soon" onclick="toggleMobileMenu()">Coming Soon</a>
+    <a href="#about-us" onclick="toggleMobileMenu()">About Us</a>
+    <a href="#video" onclick="toggleMobileMenu()">Video</a>
+    <a href="#team" onclick="toggleMobileMenu()">Team</a>
+    <a href="#contact-us" onclick="toggleMobileMenu()">Contact</a>
+    <a href="#map" onclick="toggleMobileMenu()">Map</a>
+  </div>
 
   <section id="coming-soon" class="coming-soon section">
     <h1>Coming Soon</h1>
@@ -203,18 +226,15 @@
   </section>
 
   <section id="video" class="video-section">
-    <h2 align="center">Watch Our Introduction</h2>
+    <h2>Watch Our Introduction</h2>
     <div class="video-container">
-        <iframe 
-            width="100%" 
-            height="450" 
-            src="https://www.youtube.com/embed/RUOg82-qSaI" 
-            title="Revolnet Product Demo"
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      <iframe 
+        src="https://www.youtube.com/embed/RUOg82-qSaI" 
+        title="Revolnet Product Demo"
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
         allowfullscreen>
-        </iframe>
-
+      </iframe>
     </div>
   </section>
 
@@ -246,7 +266,7 @@
     <h1>Contact Us</h1>
     <div class="contact-info">
       <p><strong>Email:</strong> <a href="mailto:dir@revolnet.com">dir@revolnet.com</a></p>
-      <p><strong>Phone:</strong> +91-9901610675</p>
+      <p><strong>Phone:</strong> +91-9876543210</p>
       <p><strong>Address:</strong><br/>
         Revolnet Pvt. Ltd,<br/>
         17, 7th Main Rd, Indiranagar II Stage,<br/>
@@ -271,6 +291,17 @@
       <p>Revolnet Pvt. Ltd, 17, 7th Main Rd, Indiranagar II Stage, Bengaluru, Karnataka 560038</p>
     </div>
   </footer>
+
+  <script>
+    function toggleMobileMenu() {
+      const menu = document.getElementById("mobileMenu");
+      if (menu.style.display === "flex") {
+        menu.style.display = "none";
+      } else {
+        menu.style.display = "flex";
+      }
+    }
+  </script>
 
 </body>
 </html>
