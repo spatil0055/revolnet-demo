@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Revolnet - Coming Soon</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="icon" href="registered.png" type="image/x-icon" />
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    .navbar {
+      background: #333;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar .logo { font-size: 1.5rem; font-weight: bold; }
+    .navbar .nav-links a {
+      color: #fff;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    .navbar .nav-links a:hover { color: #00bcd4; }
+
+    .section { padding: 50px 20px; text-align: center; }
+    .coming-soon {
+      background-color: rgb(8, 223, 243);
+      color: white;
+      padding: 100px 20px;
+    }
+    .coming-soon h1 { font-size: 5em; }
+    .coming-soon p { font-size: 2em; }
+
+    .about-us {
+      background: #eaeaea;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 50px 20px;
+    }
+    .about-left, .about-right {
+      flex: 1;
+      padding: 20px;
+      max-width: 50%;
+    }
+    .about-left img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .about-right h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .video-section {
+      background: #fff;
+      padding: 50px 20px;
+    }
+    .video-section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .video-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .video-container iframe {
+      width: 100%;
+      height: 450px;
+      border-radius: 10px;
+      border: none;
+    }
+
+    .team {
+      background: #eaeaea;
+    }
+    .team h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+    .team-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .team-member {
+      flex: 1;
+      max-width: 30%;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .team-member img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+    .social-icons a {
+      margin: 0 8px;
+      font-size: 1.2rem;
+      color: #666;
+    }
+    .social-icons a:hover { color: #00bcd4; }
+
+    .contact-us {
+      background: #f1f1f1;
+      padding: 50px 20px;
+    }
+    .contact-us h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .contact-info {
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      text-align: left;
+    }
+
+    .map iframe {
+      width: 100%;
+      height: 450px;
+      border-radius: 10px;
+      border: none;
+    }
+
+    .footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .about-us {
+        flex-direction: column;
+      }
+      .about-left { display: none; }
+      .about-right {
+        max-width: 100%;
+        text-align: left;
+      }
+      .team-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .team-member {
+        max-width: 100%;
+      }
+      .video-container iframe {
+        height: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">REVOLNET</div>
+    <div class="nav-links">
+      <a href="#coming-soon">Coming Soon</a>
+      <a href="#about-us">About Us</a>
+      <a href="#video">Video</a>
+      <a href="#team">Team</a>
+      <a href="#contact-us">Contact</a>
+      <a href="#map">Map</a>
+    </div>
+  </nav>
+
+  <section id="coming-soon" class="coming-soon section">
+    <h1>Coming Soon</h1>
+    <p>We are working hard to launch our website!</p>
+  </section>
+
+  <section id="about-us" class="about-us section">
+    <div class="about-left">
+      <img src="about.jpg" alt="About Us">
+    </div>
+    <div class="about-right">
+      <h2>About Us</h2>
+      <p>Revolnet is a forward-thinking, technology-driven company committed to shaping the future of connectivity and collaboration.</p>
+    </div>
+  </section>
+
+  <section id="video" class="video-section">
+    <h2 align="center">Watch Our Introduction</h2>
+    <div class="video-container">
+        <iframe 
+            width="100%" 
+            height="450" 
+            src="https://www.youtube.com/embed/RUOg82-qSaI" 
+            title="Revolnet Product Demo"
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+        </iframe>
+
+    </div>
+  </section>
+
+  <section id="team" class="team section">
+    <h2>Our Team</h2>
+    <div class="team-container">
+      <div class="team-member">
+        <img src="siddaram.jpeg" alt="Siddaram Patil">
+        <h3>Siddaram Patil</h3>
+        <div class="social-icons">
+          <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.linkedin.com/in/siddaram-patil-3011672b/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+      </div>
+      <div class="team-member">
+        <img src="Prashant.jpeg" alt="Prashant Kumar K R">
+        <h3>Prashant Kumar K R</h3>
+        <div class="social-icons">
+          <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.linkedin.com/in/prashanth-kumar-k-r-49830240/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact-us" class="contact-us section">
+    <h1>Contact Us</h1>
+    <div class="contact-info">
+      <p><strong>Email:</strong> <a href="mailto:dir@revolnet.com">dir@revolnet.com</a></p>
+      <p><strong>Phone:</strong> +91-9901610675</p>
+      <p><strong>Address:</strong><br/>
+        Revolnet Pvt. Ltd,<br/>
+        17, 7th Main Rd, Indiranagar II Stage,<br/>
+        Bengaluru, Karnataka 560038
+      </p>
+    </div>
+  </section>
+
+  <section id="map" class="map section">
+    <h2>Find Us Here</h2>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4528.916957130217!2d77.63282353849984!3d12.978523731228902!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xae10488b9a2465bf%3A0x459441f33b915224!2sAspire%20Coworks!5e0!3m2!1sen!2sin!4v1734021676436!5m2!1sen!2sin"
+      allowfullscreen=""
+      loading="lazy"
+      title="Google Map">
+    </iframe>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>© 2024 Revolnet. All rights reserved.</p>
+      <p>Revolnet Pvt. Ltd, 17, 7th Main Rd, Indiranagar II Stage, Bengaluru, Karnataka 560038</p>
+    </div>
+  </footer>
+
+</body>
+</html>
